@@ -11,7 +11,7 @@ def create_network():
 
     public_subnet= ec2.create_subnet(VpcId=vpc_id, CidrBlock= '10.0.1.0/24')
     public_subnet_id= public_subnet['Subnet']['SubnetId']
-    print("public subnet successfully created \public subnet ID :"+ public_subnet_id)
+    print("public subnet successfully created \npublic subnet ID :"+ public_subnet_id)
     ec2.create_tags(Resources=[public_subnet_id], Tags=[{"Key": "Name", "Value": "PublicSubnetSDK"}])
 
     private_subnet = ec2.create_subnet(VpcId=vpc_id, CidrBlock= '10.0.2.0/24')
